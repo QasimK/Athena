@@ -1,0 +1,8 @@
+Host *
+    IdentityFile ~/.ssh/athena_dev
+
+Host * !bitbucket.org !github.com
+    ServerAliveInterval 240
+    ControlPersist 4h
+    ControlMaster auto
+    ControlPath ~/.ssh/controlmasters/%r@%h:%p

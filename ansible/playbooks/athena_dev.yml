@@ -13,6 +13,9 @@
       args:
         creates: ~/.ssh/athena_dev
 
+    - name: copy SSH config file
+      copy: src=config dest=~/.ssh/config mode=0600
+
     - name: set SSH known hosts
       known_hosts:
         name: "{{ item.name }}"
@@ -24,6 +27,19 @@
 
     - name: clone athena repo
       git:
-        repo: 'git@github.com:QasimK/Athena.git'
+        repo: "git@github.com:QasimK/Athena.git"
+        key_file: ~/.ssh/athena_dev
         clone: yes
-        dest: ~/athena
+        dest: ~/Athena/
+
+    - name: configure .bashrc
+      lineinfile: path=~/.bashrc create=yes line="export VISUAL=vim"
+
+    - name: configure .bashrc
+      lineinfile: path=~/.bashrc create=yes line="export EDITOR=vim"
+
+    - name: configure .vimrc
+      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.vimrc' dest=~/.vimrc
+
+    - name: configure .inputrc
+      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.inputrc' dest=~/.inputrc
