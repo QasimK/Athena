@@ -1,0 +1,5 @@
+---
+
+unattended_upgrades__remove_unused: yes
+unattended_upgrades__auto_reboot: yes
+unattended_upgrades__auto_reboot_time: '02:30'

@@ -1,0 +1,8 @@
+---
+
+bootstrap__admin_default_users: []
+bootstrap__admin_sshkeys: []
+bootstrap__admin_users:
+# My public SSH public key
+  - name: dev
+    sshkeys: ["{{ lookup('file', inventory_dir + '/../playbooks/qasimk_id_rsa.pub') }}"]

@@ -1,0 +1,12 @@
+---
+
+apt_install__packages:
+  - vim
+  - htop
+  - mosh
+
+# Requirements for this virtualenv to work on the VPS
+  - python-dev
+  - libffi-dev
+  - libssl-dev
+  - sshpass     # For bootstrap with SSH passwords

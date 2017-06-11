@@ -1,0 +1,8 @@
+# Ubuntu requirements for Ansible
+# python-dev
+# libffi-dev
+# libssl-dev
+
+# Python 2 Virtualenv
+ansible==2.3.0.1
+debops==0.4.4
