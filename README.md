@@ -1,8 +1,12 @@
 # Ansible Management of Development Machine
 
-Update the server just by running `debops` on `athena` or `localhost`
+Update the server just by running `debops` on `athena` or `localhost`:
 
     debops -l <host>
+
+Update the personal development enviroment (e.g. .vimrc) by:
+
+    debops ansible/playbooks/athena_dev.yml -l <host>
 
 **NOTE** The IP address of `athena` is configured through the SSH config and
 is not stored in this repo.

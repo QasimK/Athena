@@ -32,6 +32,9 @@
         clone: yes
         dest: ~/Athena/
 
+    - name: configure .inputrc
+      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.inputrc' dest=~/.inputrc
+
     - name: configure .bashrc
       lineinfile: path=~/.bashrc create=yes line="export VISUAL=vim"
 
@@ -41,5 +44,5 @@
     - name: configure .vimrc
       get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.vimrc' dest=~/.vimrc
 
-    - name: configure .inputrc
-      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.inputrc' dest=~/.inputrc
+    - name: configure .tmux.conf
+      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.tmux.conf' dest=~/.tmux.conf
