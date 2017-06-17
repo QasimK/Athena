@@ -6,6 +6,7 @@ apt_install__packages:
   - mosh
 
 # Requirements for this virtualenv to work on the VPS
+  - build-essential
   - python-dev
   - libffi-dev
   - libssl-dev
