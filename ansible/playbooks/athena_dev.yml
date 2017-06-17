@@ -24,7 +24,8 @@
       get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.tmux.conf' dest=~/.tmux.conf
 
     - name: generate an SSH key for 'Athena Dev'
-      shell: ssh-keygen -t ed25519 -C athena_dev -f ~/.ssh/athena_dev -q -N ""
+      shell: ssh-keygen -t rsa -b 4096 -C athena_dev -f ~/.ssh/athena_dev -q -N ""
+      # shell: ssh-keygen -t ed25519 -C athena_dev -f ~/.ssh/athena_dev -q -N ""
       args:
         creates: ~/.ssh/athena_dev
 
