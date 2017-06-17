@@ -8,6 +8,21 @@
   remote_user: dev
 
   tasks:
+    - name: configure .inputrc
+      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.inputrc' dest=~/.inputrc
+
+    - name: configure .bashrc
+      lineinfile: path=~/.bashrc create=yes line="export VISUAL=vim"
+
+    - name: configure .bashrc
+      lineinfile: path=~/.bashrc create=yes line="export EDITOR=vim"
+
+    - name: configure .vimrc
+      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.vimrc' dest=~/.vimrc
+
+    - name: configure .tmux.conf
+      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.tmux.conf' dest=~/.tmux.conf
+
     - name: generate an SSH key for 'Athena Dev'
       shell: ssh-keygen -t ed25519 -C athena_dev -f ~/.ssh/athena_dev -q -N ""
       args:
@@ -31,18 +46,3 @@
         key_file: ~/.ssh/athena_dev
         clone: yes
         dest: ~/Athena/
-
-    - name: configure .inputrc
-      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.inputrc' dest=~/.inputrc
-
-    - name: configure .bashrc
-      lineinfile: path=~/.bashrc create=yes line="export VISUAL=vim"
-
-    - name: configure .bashrc
-      lineinfile: path=~/.bashrc create=yes line="export EDITOR=vim"
-
-    - name: configure .vimrc
-      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.vimrc' dest=~/.vimrc
-
-    - name: configure .tmux.conf
-      get_url: url='https://raw.githubusercontent.com/QasimK/my-setup/master/.tmux.conf' dest=~/.tmux.conf
