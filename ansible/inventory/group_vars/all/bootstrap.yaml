@@ -1,5 +1,6 @@
 ---
 
+bootstrap__admin_system: no
 bootstrap__admin_default_users: []
 bootstrap__admin_sshkeys: []
 bootstrap__admin_users:

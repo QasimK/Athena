@@ -1,9 +1,11 @@
 ---
 
 apt_install__packages:
-  - vim
   - htop
   - mosh
+  - tmux
+  - vim
+  - ack-grep
 
 # Requirements for this virtualenv to work on the VPS
   - build-essential
